@@ -1,5 +1,7 @@
 package hendrix.projectEuler.problem1_15;
 
+import hendrix.projectEuler.utils.Fibonacci;
+
 /**
  * Description:
  * Problem02, Even Fibonacci numbers
@@ -10,20 +12,28 @@ package hendrix.projectEuler.problem1_15;
  */
 public class Problem02 {
     /*
-    Solution description here
+    Using the utils.Fibonacci to generate a sequence upto 4million, add up all the even term
     */
     private static String solve() {
-        //TODO
-        return "Answer Here";
+        Fibonacci.initByMax(4000000);
+        int[] list = Fibonacci.toArray();
+        int sum = 0;
+        for (int i = 0; i < list.length - 1; i++) {
+            if (list[i] % 2 == 0) {
+                sum += list[i];
+            }
+        }
+        return Integer.toString(sum);
     }
 
     public static void main(String[] args) {
         long startTime = System.nanoTime();
         String result = solve();
         long endTime = System.nanoTime();
-        System.out.println("Answer: " + result + "\nProcess took " + (endTime - startTime) / 1000 + "ms to execute");
+        System.out.println("Answer: " + result + "\nProcess took " + (endTime - startTime) / (1000 * 1000) + "ms to execute");
     }
 }
 /*
-Put result here
+Answer: 4613732
+Process took 4ms to execute
 */

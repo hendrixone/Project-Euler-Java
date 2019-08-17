@@ -13,7 +13,7 @@ public class Problem01 {
         long startTime = System.nanoTime();
         String result = solve();
         long endTime = System.nanoTime();
-        System.out.println("Answer: "+result+"\nProcess took "+(endTime - startTime)/1000+"ms to execute");
+        System.out.println("Answer: " + result + "\nProcess took " + (endTime - startTime) / 1000 / 1000 + "ms to execute");
     }
 
     private static String solve() {
@@ -27,5 +27,5 @@ public class Problem01 {
 }
 /*
 Answer: 233168
-Process took 47ms to execute
+Process took 0ms to execute
  */
