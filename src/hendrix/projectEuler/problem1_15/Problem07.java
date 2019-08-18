@@ -1,20 +1,24 @@
 package hendrix.projectEuler.problem1_15;
 
+import hendrix.projectEuler.utils.Prime;
+
 /**
  * Description:
  * Problem07, 10001st prime
  * <p>
  * By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
  * <p>
- * What is the 10 001st prime number?
+ * What is the 10001st prime number?
  */
 public class Problem07 {
     /*
-    Solution description here
+    Using the prime tool in utils, by generating a list of primes with the size close to 10001, then return the 10001th
+    element which is the answer
     */
     private static String solve() {
-        //TODO
-        return "Answer Here";
+        Prime.initByMax(150000);
+        int[] list = Prime.getArray();
+        return Integer.toString(list[10000]);
     }
 
     public static void main(String[] args) {
@@ -25,5 +29,6 @@ public class Problem07 {
     }
 }
 /*
-Put result here
+Answer: 104743
+Process took 77ms to execute
 */

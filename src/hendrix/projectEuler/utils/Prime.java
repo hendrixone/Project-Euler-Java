@@ -1,5 +1,7 @@
 package hendrix.projectEuler.utils;
 
+import java.util.LinkedList;
+
 public class Prime {
     private static boolean[] boolList;
 
@@ -28,7 +30,7 @@ public class Prime {
         //TODO
     }
 
-    static void initByMax(int max) {
+    public static void initByMax(int max) {
         boolList = new boolean[max];
         for (int i = 2; i < boolList.length; i++)
             boolList[i] = true;
@@ -42,6 +44,24 @@ public class Prime {
                 }
             }
         }
+    }
+
+    public static boolean[] getBoolArray() {
+        return boolList;
+    }
+
+    public static int[] getArray() {
+        LinkedList<Integer> temp = new LinkedList<Integer>();
+        for (int i = 0; i < boolList.length; i++) {
+            if (boolList[i]) {
+                temp.add(i);
+            }
+        }
+        int[] list = new int[temp.size()];
+        for (int i = 0; i < list.length; i++) {
+            list[i] = temp.pop();
+        }
+        return list;
     }
 
     public static void main(String[] args) {
