@@ -41,6 +41,20 @@ public class TextImporter {
         return null;
     }
 
+    public static int[][] readIntTable(String name) {
+        String[] raw = readWithLine(name);
+        int[][] table = new int[raw.length][];
+        for (int i = 0; i < raw.length; i++) {
+            String[] temp = raw[i].split(" ");
+            int[] line = new int[temp.length];
+            for (int j = 0; j < temp.length; j++) {
+                line[j] = Integer.parseInt(temp[j]);
+            }
+            table[i] = line;
+        }
+        return table;
+    }
+
     private static BufferedReader getReader(String path) {
         path = "externalfile/" + path;
         File file = new File(path);

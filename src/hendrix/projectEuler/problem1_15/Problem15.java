@@ -10,7 +10,7 @@ package hendrix.projectEuler.problem1_15;
  */
 public class Problem15 {
     /*
-    Unable to explain this
+    Composite math
     */
     private static String solve() {
         long grid[][] = new long[21][21];

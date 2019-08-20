@@ -13,31 +13,36 @@ package hendrix.projectEuler.problem16_30;
  * <p>
  * That is, 3 + 7 + 4 + 9 = 23.
  * <p>
- * Find the maximum total from top to bottom of the triangle below:
- * <p>
- * 75
- * 95 64
- * 17 47 82
- * 18 35 87 10
- * 20 04 82 47 65
- * 19 01 23 75 03 34
- * 88 02 77 73 07 63 67
- * 99 65 04 28 06 16 70 92
- * 41 41 26 56 83 40 80 70 33
- * 41 48 72 33 47 32 37 16 94 29
- * 53 71 44 65 25 43 91 52 97 51 14
- * 70 11 33 28 77 73 17 78 39 68 17 57
- * 91 71 52 38 17 14 91 43 58 50 27 29 48
- * 63 66 04 68 89 53 67 30 73 16 69 87 40 31
- * 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
- * <p>
+ * Find the maximum total from top to bottom of the triangle below (p18.txt):
+
  * NOTE: As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)
  */
-public class Problem18 {
+public class Problem18_TODO {
     /*
     Solution description here
     */
     private static String solve() {
+//        String[] raw = TextImporter.readWithLine("p18.txt");
+//        int[][] table = new int[raw.length][];
+//        for (int i = 0; i < raw.length; i++) {
+//            String[] temp = raw[i].split(" ");
+//            int[] line = new int[temp.length];
+//            for (int j = 0; j < temp.length; j++) {
+//                line[j] = Integer.parseInt(temp[j]);
+//            }
+//            table[i] = line;
+//        }
+//        for (int i = 0; i < table.length; i++) {
+//            System.out.println(Arrays.toString(table[i]));
+//        }
+//        int max;
+//        for (int i = 0; i <= 0b11111111111111; i++) {
+//            int sum;
+//            String path = Integer.toBinaryString(i);
+//            for (int j = 0; j < 14; j++) {
+//
+//            }
+//        }
         return "Answer Here";
     }
 
