@@ -1,5 +1,10 @@
 package hendrix.projectEuler.problem16_30;
 
+import hendrix.projectEuler.utils.TextImporter;
+
+import java.io.IOException;
+import java.util.Arrays;
+
 /**
  * Description:
  * Problem22, Names scores
@@ -11,14 +16,27 @@ package hendrix.projectEuler.problem16_30;
  */
 public class Problem22 {
     /*
-    Solution description here
+    Nothing special
     */
-    private static String solve() {
-        //TODO
-        return "Answer Here";
+    private static String solve() throws IOException {
+        int sum = 0;
+        //load names into an array
+        String[] nameList = TextImporter.readString("p22.txt");
+        Arrays.sort(nameList);
+
+        //calculate name score for each name and add to the sum;
+        for (int i = 0; i < nameList.length; i++) {
+            int temp = 0;
+            for (int j = 0; j < nameList[i].length(); j++) {
+                temp += nameList[i].charAt(j) - 'A' + 1;
+            }
+            temp *= i + 1;
+            sum += temp;
+        }
+        return Integer.toString(sum);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         long startTime = System.nanoTime();
         String result = solve();
         long endTime = System.nanoTime();
@@ -26,5 +44,6 @@ public class Problem22 {
     }
 }
 /*
-Put result here
+Answer: 871198282
+Process took 21ms to execute
 */

@@ -2,10 +2,11 @@ package hendrix.projectEuler.utils;
 
 import java.io.*;
 import java.util.LinkedList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TextImporter {
-    public static String read(String name) {
-        try {
+    public static String read(String name) throws IOException {
             BufferedReader br = getReader(name);
             String content = "";
             String temp;
@@ -14,14 +15,9 @@ public class TextImporter {
             }
             br.close();
             return content;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
-    public static String[] readWithLine(String name) {
-        try {
+    public static String[] readWithLine(String name) throws IOException {
             BufferedReader br = getReader(name);
             LinkedList<String> content = new LinkedList<>();
             String temp;
@@ -35,13 +31,22 @@ public class TextImporter {
                 array[i] = content.pop();
             }
             return array;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
-    public static int[][] readIntTable(String name) {
+    public static String[] readString(String name) throws IOException {
+        Pattern p = Pattern.compile("\\w+");
+        Matcher m = p.matcher(read(name));
+        LinkedList<String> temp = new LinkedList<>();
+        while (m.find())
+            temp.add(m.group());
+        String[] list = new String[temp.size()];
+        for (int i = 0; i < list.length; i++) {
+            list[i] = temp.pop();
+        }
+        return list;
+    }
+
+    public static int[][] readIntTable(String name) throws IOException {
         String[] raw = readWithLine(name);
         int[][] table = new int[raw.length][];
         for (int i = 0; i < raw.length; i++) {
@@ -55,19 +60,14 @@ public class TextImporter {
         return table;
     }
 
-    private static BufferedReader getReader(String path) {
+    private static BufferedReader getReader(String path) throws FileNotFoundException {
         path = "externalfile/" + path;
         File file = new File(path);
-        try {
-            return new BufferedReader(new FileReader(file));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return new BufferedReader(new FileReader(file));
     }
 
-    public static void main(String[] args) {
-        String[] list = readWithLine("p08.txt");
+    public static void main(String[] args) throws IOException {
+        String[] list = readString("p23.txt");
         for (String s : list)
             System.out.println(s);
     }

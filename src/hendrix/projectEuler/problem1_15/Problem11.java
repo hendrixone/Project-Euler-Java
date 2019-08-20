@@ -2,6 +2,8 @@ package hendrix.projectEuler.problem1_15;
 
 import hendrix.projectEuler.utils.TextImporter;
 
+import java.io.IOException;
+
 /**
  * Description:
  * Problem11, Largest product in a grid
@@ -16,7 +18,7 @@ public class Problem11 {
     /*
     Covert into a two dimension array then find the max from 4 different path
     */
-    private static String solve() {
+    private static String solve() throws IOException {
         String[] raw = TextImporter.readWithLine("p11.txt");
         int[][] table = new int[20][20];
         for (int i = 0; i < raw.length; i++) {
@@ -76,7 +78,7 @@ public class Problem11 {
         return Integer.toString(max);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         long startTime = System.nanoTime();
         String result = solve();
         long endTime = System.nanoTime();

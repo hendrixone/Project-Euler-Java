@@ -2,6 +2,8 @@ package hendrix.projectEuler.problem1_15;
 
 import hendrix.projectEuler.utils.TextImporter;
 
+import java.io.IOException;
+
 /**
  * Description:
  * Problem08, Largest product in a series
@@ -14,7 +16,7 @@ public class Problem08 {
     /*
     Enumerate all possible product, find the largest among them
     */
-    private static String solve() {
+    private static String solve() throws IOException {
         String numbers = TextImporter.read("p08.txt");
         long max = 0;
         for (int i = 0; i < numbers.length() - 13; i++) {
@@ -29,7 +31,7 @@ public class Problem08 {
         return Long.toString(max);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         long startTime = System.nanoTime();
         String result = solve();
         long endTime = System.nanoTime();
