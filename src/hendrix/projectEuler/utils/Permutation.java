@@ -13,7 +13,11 @@ public class Permutation<E extends Comparable<? super E>> {
     }
 
     public static void main(String[] args) {
-        Permutation<Integer> p = new Permutation<>(new Integer[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9});
+        Character[] characters = new Character[26];
+        for (int i = 0; i < 26; i++) {
+            characters[i] = "abcdefghijklmnopqrstuvwxyz".charAt(i);
+        }
+        Permutation<Character> p = new Permutation<>(characters);
         do {
             System.out.println(Arrays.toString(p.next()));
         } while (p.hasNext());
