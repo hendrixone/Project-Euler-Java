@@ -1,6 +1,6 @@
 package hendrix.projectEuler.problem1_15;
 
-import hendrix.projectEuler.utils.Prime;
+import hendrix.projectEuler.utils.PrimeTools;
 
 /**
  * Description:
@@ -16,8 +16,7 @@ public class Problem07 {
     element which is the answer
     */
     private static String solve() {
-        Prime.initByMax(150000);
-        int[] list = Prime.getArray();
+        int[] list = PrimeTools.getArray(150000);
         return Integer.toString(list[10000]);
     }
 

@@ -1,6 +1,6 @@
 package hendrix.projectEuler.problem16_30;
 
-import hendrix.projectEuler.utils.Prime;
+import hendrix.projectEuler.utils.PrimeTools;
 
 /**
  * Description:
@@ -50,7 +50,7 @@ public class Problem27 {
      */
     private static int formula(int a, int b) {
         for (int i = 0; i < 1000; i++) {
-            if (!Prime.isPrime((int) Math.pow(i, 2) + (a * i) + b)) {
+            if (!PrimeTools.isPrime((int) Math.pow(i, 2) + (a * i) + b)) {
                 return i;
             }
         }

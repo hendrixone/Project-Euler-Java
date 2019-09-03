@@ -1,6 +1,6 @@
 package hendrix.projectEuler.problem1_15;
 
-import hendrix.projectEuler.utils.Prime;
+import hendrix.projectEuler.utils.PrimeTools;
 
 /**
  * Description:
@@ -15,8 +15,7 @@ public class Problem10 {
     Using utils.prime to generate all primes under 2 million, then find the sum.
     */
     private static String solve() {
-        Prime.initByMax(2000000);
-        boolean[] primes = Prime.getBoolArray();
+        boolean[] primes = PrimeTools.getBoolArray(2000000);
         long sum = 0;
         for (int i = 0; i < primes.length; i++) {
             if (primes[i]) {
