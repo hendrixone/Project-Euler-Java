@@ -1,5 +1,7 @@
 package hendrix.projectEuler.problem31_45;
 
+import hendrix.projectEuler.utils.Digits;
+
 /**
  * Description:
  * Problem38, Pandigital multiples
@@ -17,11 +19,23 @@ package hendrix.projectEuler.problem31_45;
  */
 public class Problem38 {
     /*
-    Solution description here
+    Limit the upper bound of the number under 5 digit will help improve speed, no other special tricks
     */
     private static String solve() {
-        //TODO
-        return "Answer Here";
+        int max = 0;
+        for (int i = 1; i < 10000; i++) {
+            Digits temp = new Digits();
+            for (int j = 1; j < 100; j++) {
+                temp = temp.concat(new Digits(i * j));
+                if (temp.length() > 9)
+                    break;
+                if (temp.length() == 9 && temp.intValue() > max && temp.isPandigital()) {
+                    max = temp.intValue();
+                    System.out.println(max);
+                }
+            }
+        }
+        return Integer.toString(max);
     }
 
     public static void main(String[] args) {
@@ -32,5 +46,6 @@ public class Problem38 {
     }
 }
 /*
-Put result here
+Answer: 932718654
+Process took 20ms to execute
 */

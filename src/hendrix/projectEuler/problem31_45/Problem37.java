@@ -45,8 +45,8 @@ public class Problem37 {
 
     private static boolean truncateLeft(int num) {
         Digits n = new Digits(num);
-        while (n.getLength() > 0) {
-            if (!prime.isPrime(n.getValue()))
+        while (n.length() > 0) {
+            if (!prime.isPrime(n.intValue()))
                 return false;
             n = n.truncateLEft();
         }

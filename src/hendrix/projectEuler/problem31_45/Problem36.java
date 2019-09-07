@@ -1,6 +1,6 @@
 package hendrix.projectEuler.problem31_45;
 
-import hendrix.projectEuler.utils.CommonTools;
+import hendrix.projectEuler.utils.Digits;
 
 /**
  * Description:
@@ -20,7 +20,7 @@ public class Problem36 {
         int sum = 0;
         //Enumerate all odd numbers
         for (int i = 1; i < 1000000; i += 2) {
-            if (CommonTools.isPalindromes(i) && CommonTools.isPalindromes(Integer.toBinaryString(i))) {
+            if (Digits.isPalindromes(i) && Digits.isPalindromes(Integer.toBinaryString(i))) {
                 sum += i;
             }
         }
