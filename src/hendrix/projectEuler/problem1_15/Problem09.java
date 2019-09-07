@@ -17,18 +17,15 @@ public class Problem09 {
     Brute force works here
     */
     private static String solve() {
-        int a;
-        int b;
-        int c;
-        for (a = 1, b = 1, c = 0; a < 400; b++) {
-            c = (int) Math.sqrt((a * a) + (b * b));
+        for (int a = 1,b = 1, c; a < 400; b++) {
+            double sqrt = Math.sqrt((a * a) + (b * b));
+            c = (int) sqrt;
             if (a + b + c == 1000) {
-                if (Math.sqrt(a * a + b * b) % 1 == 0.0) {
+                if (sqrt % 1 == 0.0) {
                     return Integer.toString(a * b * c);
                 }
             }
             if (a + b + c > 1000 || b > 400) {
-                c = 0;
                 a++;
                 b = a;
             }

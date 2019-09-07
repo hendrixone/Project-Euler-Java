@@ -13,7 +13,7 @@ public class Problem15 {
     Composite math
     */
     private static String solve() {
-        long grid[][] = new long[21][21];
+        long[][] grid = new long[21][21];
 
         for (int i = 0; i < 21; i++) {
             grid[0][i] = 1;

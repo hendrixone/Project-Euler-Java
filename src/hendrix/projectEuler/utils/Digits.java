@@ -3,8 +3,8 @@ package hendrix.projectEuler.utils;
 import java.util.Arrays;
 import java.util.LinkedList;
 
-public class Digits {
-    private LinkedList<Byte> list;
+public class Digits{
+    private final LinkedList<Byte> list;
 
     public Digits(int num) {
         list = toList(num);
@@ -23,9 +23,7 @@ public class Digits {
 
     public Digits(Byte[] digits) {
         this.list = new LinkedList<>();
-        for (Byte digit : digits) {
-            list.add(digit);
-        }
+        list.addAll(Arrays.asList(digits));
     }
 
     public Digits(LinkedList<Byte> linkedList){
@@ -139,19 +137,19 @@ public class Digits {
     }
 
     public Digits truncateLEft() {
-        LinkedList<Byte> temp = (LinkedList<Byte>) list.clone();
+        LinkedList temp = (LinkedList) list.clone();
         temp.removeFirst();
         return new Digits(temp);
     }
 
     public Digits truncateRight() {
-        LinkedList<Byte> temp = (LinkedList<Byte>) list.clone();
+        LinkedList temp = (LinkedList) list.clone();
         temp.removeLast();
         return new Digits(temp);
     }
 
     public Digits trim(int from, int to) {
-        LinkedList<Byte> temp = (LinkedList<Byte>) list.clone();
+        LinkedList temp = (LinkedList) list.clone();
         int len = list.size() - to - 1;
         for (int i = 0; i < len; i++) {
             temp.removeLast();

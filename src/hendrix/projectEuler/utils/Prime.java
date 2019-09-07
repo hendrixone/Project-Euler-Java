@@ -3,7 +3,7 @@ package hendrix.projectEuler.utils;
 import java.util.HashSet;
 
 public class Prime {
-    private HashSet<Integer> primes = new HashSet<>();
+    private final HashSet<Integer> primes = new HashSet<>();
 
     public Prime() {
     }

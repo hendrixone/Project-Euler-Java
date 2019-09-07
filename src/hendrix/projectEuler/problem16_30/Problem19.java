@@ -19,7 +19,7 @@ import java.util.GregorianCalendar;
  * How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
  */
 public class Problem19 {
-    static GregorianCalendar gregorianCalendar = new GregorianCalendar();
+    static final GregorianCalendar gregorianCalendar = new GregorianCalendar();
 
     /*
     Solution description here

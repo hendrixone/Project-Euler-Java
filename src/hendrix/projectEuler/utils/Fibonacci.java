@@ -67,8 +67,8 @@ public class Fibonacci {
     public static void main(String[] args) {
         Fibonacci.initByMax(1000);
         int[] list = Fibonacci.toArray();
-        for (int i = 0; i < list.length; i++) {
-            System.out.println(list[i]);
+        for (int value : list) {
+            System.out.println(value);
         }
         Iterator<Integer> iterator = Fibonacci.integerIterator();
         while (iterator.hasNext()) {

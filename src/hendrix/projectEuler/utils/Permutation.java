@@ -3,7 +3,7 @@ package hendrix.projectEuler.utils;
 import java.util.Arrays;
 
 public class Permutation<E extends Comparable<? super E>> {
-    private E[] list;
+    private final E[] list;
     private int index;
     private boolean first;
 

@@ -15,7 +15,7 @@ import hendrix.projectEuler.utils.Prime;
  */
 public class Problem37 {
     //uses more space for more efficient prime check
-    private static Prime prime = new Prime();
+    private static final Prime prime = new Prime();
 
     /*
     using tow defined function to check if the number is truncatable

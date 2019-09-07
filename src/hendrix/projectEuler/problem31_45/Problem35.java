@@ -16,7 +16,7 @@ import hendrix.projectEuler.utils.Prime;
 public class Problem35 {
 
     //Sacrifices space for faster prime checking
-    static Prime prime = new Prime();
+    static final Prime prime = new Prime();
 
     /*
     Enumeration
