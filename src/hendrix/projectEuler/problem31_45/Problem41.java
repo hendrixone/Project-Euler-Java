@@ -30,7 +30,7 @@ public class Problem41 {
 
             //try to find primes from the pandigital numbers
             while (pandigits.hasNext()) {
-                int temp = Digits.intValueOf(pandigits.next());
+                int temp = (int) Digits.longValueOf(pandigits.next());
                 if (prime.isPrime(temp)) {
                     if (temp > max) {
                         max = temp;

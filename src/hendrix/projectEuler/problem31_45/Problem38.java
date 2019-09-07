@@ -29,8 +29,8 @@ public class Problem38 {
                 temp = temp.concat(new Digits(i * j));
                 if (temp.length() > 9)
                     break;
-                if (temp.length() == 9 && temp.intValue() > max && temp.isPandigital()) {
-                    max = temp.intValue();
+                if (temp.length() == 9 && temp.value() > max && temp.isPandigital()) {
+                    max = (int) temp.value();
                     System.out.println(max);
                 }
             }

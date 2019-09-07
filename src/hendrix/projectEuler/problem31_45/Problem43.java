@@ -23,14 +23,14 @@ public class Problem43 {
             boolean breakout = false;
             for (int i = 1; i <= primes.length; i++) {
                 Digits temp = num.trim(i, i + 2);
-                if (temp.intValue() % primes[i - 1] != 0) {
+                if (temp.value() % primes[i - 1] != 0) {
                     breakout = true;
                     break;
                 }
             }
             if (!breakout) {
-                sum += num.intValue();
-                System.out.println(num.intValue());
+                sum += num.value();
+                System.out.println(num.value());
             }
         }
         System.out.println(Integer.MAX_VALUE);
