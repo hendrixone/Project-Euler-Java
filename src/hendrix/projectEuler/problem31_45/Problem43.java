@@ -45,5 +45,6 @@ public class Problem43 {
     }
 }
 /*
-Put result here
+Answer: 16695334890
+Process took 1731ms to execute
 */

@@ -16,7 +16,7 @@ public class PrimeTools {
                 return false;
             }
         }
-        int sqrt = (int) Math.sqrt(num);
+        int sqrt = (int) Math.sqrt(num) + 1;
         for (int i = 3; i < sqrt; i += 2) {
             if (num % i == 0) {
                 return false;
@@ -30,7 +30,10 @@ public class PrimeTools {
     }
 
     private static boolean[] initByMax(int max) {
-        boolean[] boolList = new boolean[max];
+        if(max < 2){
+            return new boolean[]{};
+        }
+        boolean[] boolList = new boolean[max + 1];
         for (int i = 2; i < boolList.length; i++)
             boolList[i] = true;
 

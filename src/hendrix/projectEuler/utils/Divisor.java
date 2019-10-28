@@ -1,5 +1,6 @@
 package hendrix.projectEuler.utils;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 
 public class Divisor {
@@ -21,5 +22,25 @@ public class Divisor {
             sum += i;
         }
         return sum;
+    }
+
+    public static LinkedList<Integer> findPrimeFactors(int num){
+        LinkedList<Integer> factors = new LinkedList<>();
+        int[] primes = PrimeTools.getArray(num + 1);
+        while(num != 1) {
+            for (int prime : primes) {
+                if (num % prime == 0) {
+                    num /= prime;
+                    factors.add(prime);
+                    break;
+                }
+            }
+        }
+        return factors;
+    }
+
+    public static void main(String[] args) {
+        LinkedList<Integer> l = findPrimeFactors(644);
+        System.out.println(Arrays.toString(l.toArray()));
     }
 }

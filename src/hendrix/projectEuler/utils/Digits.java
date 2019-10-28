@@ -1,7 +1,6 @@
 package hendrix.projectEuler.utils;
 
-import java.util.Arrays;
-import java.util.LinkedList;
+import java.util.*;
 
 public class Digits{
     private final LinkedList<Byte> list;
@@ -79,13 +78,17 @@ public class Digits{
         return longValueOf(this.list);
     }
 
-    static public LinkedList<Byte> toList(int num) {
+    static public LinkedList<Byte> toList(long num) {
         LinkedList<Byte> list = new LinkedList<>();
         while(num != 0){
             list.addFirst((byte) (num % 10));
             num /= 10;
         }
         return list;
+    }
+
+    public static Object[] toArray(long num){
+        return toList(num).toArray();
     }
 
     public static int lengthOf(long num) {
@@ -184,6 +187,26 @@ public class Digits{
         return true;
     }
 
+    public boolean isPermutationOf(Digits num){
+        HashSet num1 = new HashSet(list);
+        HashSet num2 = new HashSet(num.list);
+        if(num1.equals(num2)) return true;
+        else return false;
+
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == this)
+            return true;
+        if(obj == null || obj.getClass() != this.getClass())
+            return false;
+        if(list.equals(((Digits)obj).list))
+            return true;
+        else
+            return false;
+    }
+
     public static void main(String[] args) {
         System.out.println(Digits.lengthOf(1234));
         Digits d = new Digits(123);
@@ -197,6 +220,7 @@ public class Digits{
         System.out.println(d);
         System.out.println(d.isPandigital());
         System.out.println(d.concat(new Digits(123)));
+        System.out.println(Arrays.toString(toArray(1213123)));
     }
 
 }
