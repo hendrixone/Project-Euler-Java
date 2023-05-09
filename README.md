@@ -1,4 +1,4 @@
 # Project-Euler-temp
-来自ProjectEuler网站的趣味算法题
+来自ProjectEuler网站的奇怪算法题
 
-本Repo为之前Python版的Java重置版，优化了代码结构
+Java重置版，优化了代码结构，练习用途
